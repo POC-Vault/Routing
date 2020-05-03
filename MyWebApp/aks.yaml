@@ -18,7 +18,7 @@ spec:
          "beta.kubernetes.io/os":  linux
       containers:  
       - name: my-app
-        image: 'crwaprd1docker1.azurecr.io/dojo.bw.keyvault.poc.1-my-app:37263'
+        image: 'farzadjalali/k8s-routing:latest'
         ports:   
         - containerPort: 80
 --- 
