@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment  
 metadata:  
   name: redirect-1
-  namespace: tst1
+  namespace: tst2
   labels:
     app: redirect-1
 spec:  
@@ -26,7 +26,7 @@ apiVersion: v1
 kind: Service 
 metadata: 
   name: redirect-1-service
-  namespace: tst1
+  namespace: tst2
 spec: 
   type: LoadBalancer
   ports: 

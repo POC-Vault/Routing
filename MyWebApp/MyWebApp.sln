@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{73DE2C47
 	ProjectSection(SolutionItems) = preProject
 		aks.yaml = aks.yaml
 		Dockerfile = Dockerfile
+		ingress.yaml = ingress.yaml
 	EndProjectSection
 EndProject
 Global
