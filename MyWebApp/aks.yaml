@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment  
 metadata:  
-  name: my-app
+  name: redirect-1
   namespace: tst1
   labels:
-    app: my-app
+    app: redirect-1
 spec:  
   selector:
     matchLabels:
-      app: my-app
+      app: redirect-1
   template:
     metadata:  
       labels:  
-        app: my-app
+        app: redirect-1
     spec:
       nodeSelector:
          "beta.kubernetes.io/os":  linux
       containers:  
-      - name: my-app
+      - name: redirect-1
         image: 'farzadjalali/k8s-routing:latest'
         ports:   
         - containerPort: 80
@@ -25,10 +25,8 @@ spec:
 apiVersion: v1
 kind: Service 
 metadata: 
-  name: my-app-service
+  name: redirect-1-service
   namespace: tst1
-  labels:
-    app: my-app-svc
 spec: 
   type: LoadBalancer
   ports: 
@@ -37,5 +35,5 @@ spec:
     protocol: TCP
     name: http-port
   selector: 
-    app: my-app
+    app: redirect-1
 
