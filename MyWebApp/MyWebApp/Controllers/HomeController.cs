@@ -20,7 +20,15 @@ namespace MyWebApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            if (Request.Method.ToLower() == "post")
+            {
+                var redirectResult = Redirect("./Home/Privacy");
+                return redirectResult;
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public IActionResult Privacy()
@@ -36,6 +44,7 @@ namespace MyWebApp.Controllers
             }
         }
 
+      
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

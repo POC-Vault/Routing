@@ -10,7 +10,8 @@ metadata:
 spec:
   tls:
   - hosts:
-    - www.example.com
+    - xyz.example.com
+    - root.example.com
     secretName: tls-secret
   rules:
   - host: www.example.com
@@ -19,5 +20,11 @@ spec:
       - backend:
           serviceName: redirect-1-service
           servicePort: 80
-        path: /xyz/app1/(.*)
-
+        path: /app1/(.*)
+  - host: root.example.com
+    http:
+      paths:
+      - backend:
+          serviceName: redirect-1-service
+          servicePort: 80
+        path: (.*)
