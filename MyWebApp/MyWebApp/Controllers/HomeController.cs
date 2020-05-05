@@ -27,7 +27,7 @@ namespace MyWebApp.Controllers
         {
             if (Request.Method.ToLower() == "post")
             {
-                var redirectResult = Redirect("/Home/Index");
+                var redirectResult = Redirect("./Home/Index");
                 return redirectResult;
             }
             else
