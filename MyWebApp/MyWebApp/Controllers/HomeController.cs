@@ -44,7 +44,19 @@ namespace MyWebApp.Controllers
             }
         }
 
-      
+        public IActionResult Env(string varName)
+        {
+            var q = System.Environment.GetEnvironmentVariables();
+
+            var txt = string.Empty;
+
+            foreach (var v in q.Keys)
+            {
+                txt += $"{v} : {q[v]}  <br>";
+            }
+
+            return Content(txt);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
