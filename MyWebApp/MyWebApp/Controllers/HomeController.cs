@@ -52,7 +52,7 @@ namespace MyWebApp.Controllers
 
             foreach (var v in q.Keys)
             {
-                txt += $"{v} : {q[v]}  <br>";
+                txt += $"{v} : {q[v]}  \r\n";
             }
 
             return Content(txt);
